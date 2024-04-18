@@ -4,6 +4,7 @@ const controle =  require ('../controllers/controle')
 
 
 router.get('/', controle.home)
+router.get('/cadastro', controle.cadastro)
 
 
 
