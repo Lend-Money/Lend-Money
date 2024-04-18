@@ -8,4 +8,8 @@ module.exports = class controle {
     static cadastro (req , res){
         res.render ('cadastro')
     }
+
+    static login (req , res){
+        res.render ('login')
+    }
 }

@@ -76,8 +76,12 @@ header{
     text-align: center;
     background-color: #70a9e6;
     border-radius: 5px;
-    color: #fff;
+    
 }
+ #login a{
+    text-decoration: none;
+    color: #fff;
+ }
 .navbar-login #login:hover{
     opacity: 0.90;
 }
