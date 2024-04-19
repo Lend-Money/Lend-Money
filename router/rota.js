@@ -52,15 +52,25 @@ router.post('/loginSolicitador', function(req,res){
     const query = 'SELECT * FROM Solicitador WHERE pass = ? AND email = ?'
     const data = ['pass', 'email', pass, email]
 
-    db.query(query, data, function(err, results){
-        if(results.length > 0){
-            // req.session.user = email -> necessita do EXPRESS-SESSION para seção de identificação
-            res.render('home')
-        } else{
-            var message = 'Login incorreto!'
-            res.render('login', message)
+   
+    db.query(query, data, function(err, results) {
+        if (results.length > 0) {
+            const hashedPassword = results[0].pass; // Assume que a senha armazenada está na coluna 'pass'
+            
+            bcrypt.compare(pass, hashedPassword, function(err, isMatch) {
+                if (isMatch) {
+                    // req.session.user = email -> necessita do EXPRESS-SESSION para seção de identificação
+                    res.render('home');
+                } else {
+                    var message = 'Login incorreto!';
+                    res.render('login', { message: message });
+                }
+            });
+        } else {
+            var message = 'Login incorreto!';
+            res.render('login', { message: message });
         }
-    })
-})
+    });
+});
 
 module.exports = router
