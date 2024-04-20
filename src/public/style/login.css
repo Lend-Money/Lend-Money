@@ -1,5 +1,4 @@
 body{
-    background-color: aqua;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -8,4 +7,14 @@ body{
 .container-input{
     display: flex;
     flex-direction: column;
+}
+.container-input input{
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 0.80rem;
+    border: 2px solid #ECF5FF;
+}
+.container-input ::placeholder{
+    font-size: 18px;
 }
