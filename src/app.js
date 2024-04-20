@@ -9,11 +9,13 @@ const rota = require('./router/rota')
 app.engine('handlebars' , exphbs.engine())
 app.set('view engine' , 'handlebars')
 
+const bodyParser = require("body-parser")
+app.use(bodyParser.urlencoded({extended: false}))
+app.unsubscribe(bodyParser.json())
+
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true,}),)
 app.use(express.json())
 app.use(rota)
-
-
 
 app.listen(5000)
