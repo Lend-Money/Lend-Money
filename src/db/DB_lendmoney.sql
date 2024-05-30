@@ -2,7 +2,8 @@ create database lendmoney;
 use lendmoney;
 
 CREATE TABLE Solicitador(
-CPF_Solicitador VARCHAR(11) PRIMARY KEY,
+CPF_Solicitador VARCHAR(11) UNIQUE,
+usuarioid PRIMARY KEY, AUTO_INCREMENT,
 EnderecoSolicitador VARCHAR(100) NOT NULL,
 NomeSolicitador VARCHAR(120) NOT NULL,
 email VARCHAR(50) NOT NULL,

@@ -14,11 +14,17 @@
         </ul>
      </nav>
      <div class="container-login">
+        {{#if isAuthenticated}}
         <nav class="navbar-login">
+            <ul>
+                <li><a href="/logout">LogOut</a></li>
+            </ul>
+            {{else}}
             <ul>
             <li id="cadastro"><a href="/cadastro">Cadastre-se</a></li>
             <li id="login"><a href="/login">Login</a></li>
             </ul>
+            {{/if}}
         </nav>
      </div>
 </header>
