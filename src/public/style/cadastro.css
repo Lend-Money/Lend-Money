@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
-=======
-@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
->>>>>>> ec8f4c571a003afcc6cf7b203892a09c4bcb53c6
-
 body{
     background-image: url('../image/24110003-humano-conexao-social-rede-global-o-negocio-e-comunicacao-tecnologia-fundo-projeto-abstrato-pessoas-conexao-conceito-ilustracao-vetor.jpg');
     background-repeat: no-repeat;
@@ -17,23 +9,12 @@ body{
 }
 
 .container-form h1{
-<<<<<<< HEAD
-    color: #FFF; 
-    margin-bottom: 1rem; 
-    text-align: center;     
-    font-size: 45px;
-    font-family: "Rajdhani", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-=======
  color: #FFF; 
  margin-bottom: 2rem; 
 text-align: center; 
-font-family: "Pacifico", cursive;
 font-weight: 400;
 font-style: normal;
 font-size: 45px;
->>>>>>> ec8f4c571a003afcc6cf7b203892a09c4bcb53c6
 }
 
 .container-form form{
@@ -53,13 +34,7 @@ font-size: 45px;
     font-weight: bold;
     color: #FFF;
     text-align: center;
-<<<<<<< HEAD
-    font-family: "Rajdhani", sans-serif;
-    font-weight: 500;
-=======
-    font-family: "Madimi One", sans-serif;
     font-weight: 400;
->>>>>>> ec8f4c571a003afcc6cf7b203892a09c4bcb53c6
     font-style: normal;
 
 }
@@ -117,5 +92,6 @@ font-size: 45px;
     color:#003075;
     font-size: 18px;
 }
+
 
 
