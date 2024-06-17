@@ -14,17 +14,17 @@
         </ul>
      </nav>
      <div class="container-login">
-        {{#if isAuthenticated}}
+        {{!-- {{#if isAuthenticated}} --}}
         <nav class="navbar-login">
-            <ul>
+            {{!-- <ul>
                 <li><a href="/logout">LogOut</a></li>
-            </ul>
-            {{else}}
+            </ul> --}}
+            {{!-- {{else}} --}}
             <ul>
             <li id="cadastro"><a href="/cadastro">Cadastre-se</a></li>
             <li id="login"><a href="/login">Login</a></li>
             </ul>
-            {{/if}}
+            {{!-- {{/if}} --}}
         </nav>
      </div>
 </header>
@@ -85,4 +85,18 @@
             <a href="/login" id="conta">Acessar Conta</a>
         </div>
         <img id="img-simulacao" src="/image/silo-5-554x456.webp" alt="simulação de empréstimo no celular">
+    </section>
+    <section class="container-cartao">
+        <div class="container-texto">
+            <h3>Empéstimo Pessoal no Cartão LM</h3>
+        <p>Dinheiro extra para o seu momento de vida</p>
+        <p>A Lend Money oferece crédito online rápido para milhares de pessoas todo dia. Nascida em 2024, uma fintech jovem e moderna, que opera 100 na internet, para 
+            agilizar ainda mais seus processos aliados  a uma inovadora análise de crédito, que olha além de um score baixo ou nome negativado.</p>
+        <p>A missão da Lend Money é garantir crédito rápido para todos, principalmente aos que mais precisam e já foram recusados diversas vezes. </p>
+        <p>Antes de procurar por um empréstimo no cartão de credito online, procure a Lend Money, verá que é possível conseguir dinheiro na hora com bons prazos e taxas que cabem no seu orçamento.</p>
+        </div>
+        <div class="nome">
+            <img src="/image/cartao.png" alt="">
+            <p id="lm">LendMoney</p>
+        </div>
     </section>

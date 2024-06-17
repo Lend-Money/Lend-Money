@@ -14,6 +14,9 @@ module.exports = class controle {
     static login (req , res){
         res.render ('login')
     }
+    static conta (req, res){
+        res.render('conta')
+    }
 
     static async loginSave(req, res){
         const {email, senha} = req.body

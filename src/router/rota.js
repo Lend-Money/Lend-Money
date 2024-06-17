@@ -10,6 +10,7 @@ router.get('/login', controle.login)
 router.post('/loginSolicitador', controle.loginSave)
 router.post('/logout', controle.logout)
 router.post('/cadastroSolic', controle.cadastroSave)
+router.get('/conta', controle.conta)
 // // router.post('/cadastroSolic', function(req, res){
 // //     const nome = req.body.nome
 // //     const cpf = req.body.cpf

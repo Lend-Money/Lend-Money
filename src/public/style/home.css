@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+
 header{
-  height: 60px;
-  display: flex;
-  justify-content: space-between ; 
-}
+    height: 60px;
+    display: flex;
+    justify-content: space-between; 
+    position: fixed;
+    top: 0px;
+    background-color: #FFF;
+    width: 100vw;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  }
 
 .container-logo{
     display: flex;
@@ -40,6 +47,12 @@ header{
     font-weight: 600;
     cursor: pointer;
     transition: 0.5s;
+    color:  #5b5b5b ;
+    transition: 0.5s;
+}
+.navbar li:hover{
+    color: #1064d8;
+    text-decoration:underline;
 }
 
 .navbar-login ul{
@@ -57,10 +70,13 @@ header{
    cursor: pointer;
 }
 .navbar-login #cadastro{
-    width: 120px;
-    height: 22px;
-    text-align: center;
+    width: 125px;
+    height: 28px;
     transition: 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 #cadastro a{
     text-decoration: none;
@@ -71,9 +87,11 @@ header{
     border-radius: 5px;
 }
 .navbar-login #login{
-    width: 120px;
-    height: 22px;
-    text-align: center;
+    width: 125px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #70a9e6;
     border-radius: 5px;
     
@@ -97,8 +115,9 @@ header{
 }
 
 .container-frase{
-   margin-top: 2rem;
+   margin-top: 4rem;
    margin-left: 3rem;
+   /* background-color: #FFF; */
 }
 
 .container-frase h1{
@@ -213,5 +232,59 @@ header{
     transform: scale(1.07);
 }
 
+.container-cartao{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  background-color: #6099DA;
+}
+
+.container-cartao h3{
+    font-size: 28px;
+    margin-top: 1.25rem;
+    color: #FFF ;
+}
+
+.container-cartao p{
+    width: 450px;
+    font-size: 20px;
+    margin-top: 0.75rem;
+    line-height: 25px;
+    color:  #F2F2F2;
+}
+
+.container-cartao img{
+    width: 250px;
+    margin-left: 10rem;
+    margin-top: 2rem;
+    animation: float 3s ease-in-out infinite;
+    
+}
+@keyframes float {
+    0%, 100%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-30px);
+    }
+}
+
+.nome{
+    position: relative;
+}
+
+.nome #lm{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+   left: 17rem;
+   top: 22.50rem;
+   color: #FFF;
+   font-family: "Antic Slab", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  animation: float 3s ease-in-out infinite;
+}
 
 
