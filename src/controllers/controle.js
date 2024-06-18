@@ -1,7 +1,7 @@
 const express = require ('express')
 const db = require('../db/conn')
 const bcrypt = require('bcrypt')
-const Usuario = require('../models/usuario.js')
+const Usuario = require('../models/solicitador.js')
 module.exports = class controle {   
     static home (req , res){
         res.render ('home', {isAuthenticated: req.session.isAuthenticated})
