@@ -6,7 +6,10 @@ const flash = require("express-flash");
 const path = require('path');
 const os = require('os');
 const bodyParser = require("body-parser");
-const Usuario = require('./models/usuario'); // Certifique-se que este caminho está correto
+const Solicitador = require('./models/solicitador');
+const Emprestimo = require('./models/emprestimo')
+const Emprestimo_Solicitado = require('./models/emprestimo_solicitado');
+const Emprestador = require('./models/emprestador');
 const app = express();
 
 // Configuração do session
@@ -54,17 +57,19 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // Importação das rotas e dos controladores
-const controle = require('../src/controllers/controle'); // Certifique-se que este caminho está correto
-const rota = require('./router/rota'); // Certifique-se que este caminho está correto
+const controle = require('../src/controllers/controle'); 
+const rota = require('./router/rota'); 
 
 // Uso das rotas
 app.use(rota);
 
 async function syncDatabase() {
   try {
-    await Usuario.sync();
+    await Solicitador.sync()
+    await Emprestador.sync()
+    await Emprestimo_Solicitado.sync()
+    await Emprestimo.sync()
     console.log('Modelo sincronizado com o banco de dados');
-    // Inicia o servidor após a sincronização
     app.listen(5000, () => {
       console.log('Servidor iniciado na porta 5000');
     });

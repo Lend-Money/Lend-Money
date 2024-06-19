@@ -1,7 +1,8 @@
 const express = require ('express')
 const db = require('../db/conn')
 const bcrypt = require('bcrypt')
-const Usuario = require('../models/usuario.js')
+
+const Solicitador = require('../models/solicitador.js')
 module.exports = class controle {   
     static home (req , res){
         res.render ('home', {isAuthenticated: req.session.isAuthenticated})
@@ -14,20 +15,23 @@ module.exports = class controle {
     static login (req , res){
         res.render ('login')
     }
+    static conta (req, res){
+        res.render('conta')
+    }
 
     static async loginSave(req, res){
         const {email, senha} = req.body
 
-        const usuario = await Usuario.findOne({where: {email: email}})
+        const solicitadores = await Solicitador.findOne({where: {email: email}})
 
-        if(!usuario){
+        if(!solicitadores){
             res.render('login', {
             message: 'Usuário não encontrado',
             })
         return
         }
 
-        const senhaMatch = bcrypt.hash.compareSync(senha, usuario.senha)
+        const senhaMatch = bcrypt.compareSync(senha, solicitadores.senha)
         if(!senhaMatch){
             res.render('login', {
                 message: 'Senha inválida',
@@ -36,20 +40,20 @@ module.exports = class controle {
         }
         req.session.isAuthenticated = true;
 
-        req.session.usuarioid = usuario.id
+        req.session.cpf = solicitadores.cpf_solicitador;
         req.flash('message2', 'Login realizado com sucesso!')
 
         req.session.save(()=>{
-            res.redirect('/')
+            res.redirect('/')            
         })
     }
     static async cadastroSave(req, res) {
         try {
-            const { nome, email, senha } = req.body;
+            const { nome, email, senha, cpf_solicitador, celular } = req.body;
     
-            const usuarioNaoValido = await Usuario.findOne({ where: { email: email } });
+            const solicitadorNaoValido = await Solicitador.findOne({ where: { email: email } });
     
-            if (usuarioNaoValido) {
+            if (solicitadorNaoValido) {
                 req.flash('message', 'Este e-mail já está sendo utilizado em outra conta');
                 res.render('cadastro', { message: req.flash('message') })
                 return;
@@ -58,15 +62,17 @@ module.exports = class controle {
             const salt = bcrypt.genSaltSync(10);
             const senhaHashed = bcrypt.hashSync(senha, salt);
     
-            const usuario = {
+            const solicitador = {
                 nome,
                 email,
-                senha: senhaHashed
+                senha: senhaHashed,
+                cpf_solicitador,
+                celular
             };
     
-            const novoUsuario = await Usuario.create(usuario);
+            const novoSolicitador = await Solicitador.create(solicitador);
     
-            req.session.userID= novoUsuario.id;
+            req.session.userID= novoSolicitador.id;
             req.session.create = true
                 req.flash('message2', 'Usuario criado com sucesso!\n Faça o login!');
                 req.session.save(() => {

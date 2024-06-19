@@ -2,13 +2,16 @@
 
 <div class="container-form">
     <form action="/loginSolicitador" method="post">
+        <img src="/image/icons8-usuário-homem-com-círculo.gif" alt="icone de login">
         <h1>Login</h1>
         <div class="container-input">
-            <input type="email" name="email" autocomplete="off" placeholder="E-mail*">
-            <input type="password" name="password" autocomplete="off" placeholder="Senha*">
-            <div class="container-button">
-                    <input type="submit" value="Logar">
+            <input type="email" name="email" autocomplete="off" placeholder="E-mail" >
+            <input type="password" name="senha" autocomplete="off" placeholder="Senha">
+                <div class="container-button">
+                    <input id="entrar" type="submit" value="Entrar">
                 </div>
+                <a href="/cadastro">Cadastre-se</a>
+                <a href="/">Voltar</a>
         </div>
     </form>
 </div>
