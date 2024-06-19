@@ -245,6 +245,7 @@ header{
     margin-top: 1.25rem;
     color: #FFF ;
 }
+
 .container-cartao p{
     width: 450px;
     font-size: 20px;
@@ -286,8 +287,6 @@ header{
   font-size: 17px;
   animation: float 3s ease-in-out infinite;
 }
-
-
 
 
 
