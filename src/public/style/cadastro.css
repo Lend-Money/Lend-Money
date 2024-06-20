@@ -92,3 +92,8 @@ font-size: 45px;
     color:#003075;
     font-size: 18px;
 }
+.alerts{
+    font-size: 17px;
+    color: red;
+    font-weight: bold;
+}
