@@ -9,14 +9,14 @@ module.exports = class controle {
     }
 
     static cadastro (req , res){
-        res.render ('cadastro')
+        res.render ('cadastro', {message2: req.flash('message2')})
     }
 
     static login (req , res){
-        res.render ('login')
+        res.render ('login', {isCreated: req.session.create, message2: req.flash('message2')})
     }
     static conta (req, res){
-        res.render('conta')
+        res.render('conta', { isAuthenticated: req.session.isAuthenticated})
     }
 
     static async loginSave(req, res){
@@ -40,7 +40,7 @@ module.exports = class controle {
         }
         req.session.isAuthenticated = true;
 
-        req.session.cpf = solicitadores.cpf_solicitador;
+        req.session.userID = solicitadores.id_solicitador;
         req.flash('message2', 'Login realizado com sucesso!')
 
         req.session.save(()=>{

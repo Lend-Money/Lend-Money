@@ -4,7 +4,11 @@ const db = require('../db/conn.js')
 const Solicitador = db.define('solicitadores',{
     cpf_solicitador:{
         type: DataTypes.STRING(11),
-        primaryKey: true
+    },
+    id_solicitador:{
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
     nome:{
         type: DataTypes.STRING

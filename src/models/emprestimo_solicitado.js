@@ -18,12 +18,11 @@ const Emprestimo_solicitado = db.define('emprestimo_solicitado', {
         primaryKey: true,
         autoIncrement: true
     },
-    cpf_solicitador: {
-        type: DataTypes.STRING(11),
-        allowNull: false,
+    id_solicitador: {
+        type: DataTypes.INTEGER,
         references: {
             model: Solicitador, 
-            key: 'cpf_solicitador' 
+            key: 'id_solicitador' 
         }
     },
     valor:{

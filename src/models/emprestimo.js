@@ -18,11 +18,11 @@ const Emprestimo = db.define('emprestimos', {
         primaryKey: true,
         autoIncrement: true
     },
-    cpf_emprestador: {
-        type: DataTypes.STRING(11),
+    id_emprestador: {
+        type: DataTypes.INTEGER,
         references: {
             model: Emprestador, 
-            key: 'cpf_emprestador' 
+            key: 'id_emprestador' 
         }
     },
     Id_EmprestimoSolicitados:{

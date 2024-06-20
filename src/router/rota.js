@@ -8,7 +8,7 @@ router.get('/', controle.home)
 router.get('/cadastro', controle.cadastro)
 router.get('/login', controle.login)
 router.post('/loginSolicitador', controle.loginSave)
-router.post('/logout', controle.logout)
+router.get('/out', controle.logout)
 router.post('/cadastroSolic', controle.cadastroSave)
 router.get('/conta', controle.conta)
 // // router.post('/cadastroSolic', function(req, res){

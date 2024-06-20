@@ -10,11 +10,21 @@
                 <input type="email" name="email" autocomplete="off" placeholder="E-mail*">
                 <input type="password" name="senha" autocomplete="off" placeholder="Senha*">  
                 <input type="text" name="celular" autocomplete="off" placeholder="Celular*">
-                <div class="container-button">
+                <div class="container-button">                    
                     <input type="submit" value="Cadastra-se">
                 </div>
                 <a href="/">Voltar</a>
             </div>
+            {{#if message}}
+            <div class="alerts">
+                {{message2}}
+            </div>
+        {{/if}}
+        {{#if message2}}
+            <div class="alerts">
+                {{message2}}
+            </div>
+        {{/if}}
             </form>
     </div>
         

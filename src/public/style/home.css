@@ -70,7 +70,7 @@ header{
    font-weight: 600;
    cursor: pointer;
 }
-.navbar-login #cadastro{
+.navbar-login .cadastro{
     width: 125px;
     height: 28px;
     transition: 0.5s ease;
@@ -79,11 +79,11 @@ header{
     align-items: center;
 
 }
-#cadastro a{
+.cadastro a{
     text-decoration: none;
     color: #1064d8;
 }
-.navbar-login #cadastro:hover{ 
+.navbar-login .cadastro:hover{ 
    background-color: #D8F1FE;
     border-radius: 5px;
 }
