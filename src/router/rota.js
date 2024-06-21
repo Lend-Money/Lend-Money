@@ -12,7 +12,6 @@ router.get('/login', controle.login)
 router.post('/loginSolicitador', controle.loginSave)
 router.get('/out', controle.logout)
 router.post('/cadastroSolic', controle.cadastroSave)
-<<<<<<< HEAD
 router.get('/emprestimo',solicitacao.emprestimo)
 router.post('/addemprestimo',solicitacao.emprestimoSave)
 router.get('/cadastro2', controle2.cadastro2)
@@ -21,9 +20,6 @@ router.get('/login2', controle2.login2)
 router.post('/loginEmprestador', controle2.loginSave2)
 router.get('/out', controle2.logout)
 
-=======
-router.get('/conta', controle.conta)
->>>>>>> 26491e2cb0c1bf402c2b068f1a32a3826efde6a1
 // // router.post('/cadastroSolic', function(req, res){
 // //     const nome = req.body.nome
 // //     const cpf = req.body.cpf

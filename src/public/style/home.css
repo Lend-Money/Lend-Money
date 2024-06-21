@@ -3,11 +3,7 @@
 header{
     height: 60px;
     display: flex;
-<<<<<<< HEAD
     justify-content: space-between;
-=======
-    justify-content: space-between; 
->>>>>>> 26491e2cb0c1bf402c2b068f1a32a3826efde6a1
     position: fixed;
     top: 0px;
     background-color: #FFF;
@@ -77,11 +73,7 @@ header{
    cursor: pointer;
 }
 .navbar-login .cadastro{
-<<<<<<< HEAD
     width: 160px;
-=======
-    width: 125px;
->>>>>>> 26491e2cb0c1bf402c2b068f1a32a3826efde6a1
     height: 28px;
     transition: 0.5s ease;
     display: flex;
@@ -98,11 +90,7 @@ header{
     border-radius: 5px;
 }
 .navbar-login #login{
-<<<<<<< HEAD
     width: 160px;
-=======
-    width: 125px;
->>>>>>> 26491e2cb0c1bf402c2b068f1a32a3826efde6a1
     height: 28px;
     display: flex;
     justify-content: center;
