@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/style/cadastro.css">
 <div class="container">
-      {{#if message}}
+    {{#if message}}
             <div class="alerts">
                 {{message}}
             </div>
@@ -9,14 +9,14 @@
             <div class="alerts">
                 {{message2}}
             </div>
-        {{/if}}
+        {{/if}} 
     <div class="container-form">
         <h1>Lend Money</h1>
-        <form action="/cadastroSolic" method="post">
+        <form action="/cadastroEmprestador" method="post">
             <div class="container-input">
                 <p>Empréstimo rápido e fácil</p>
                 <input type="text" name="nome" autocomplete="off" placeholder="Nome completo*">
-                <input type="text" name="cpf_solicitador" autocomplete="off" placeholder="CPF*">
+                <input type="text" name="cpf_emprestador" autocomplete="off" placeholder="CPF*">
                 <input type="email" name="email" autocomplete="off" placeholder="E-mail*">
                 <input type="password" name="senha" autocomplete="off" placeholder="Senha*">  
                 <input type="text" name="celular" autocomplete="off" placeholder="Celular*">
@@ -24,10 +24,8 @@
                     <input type="submit" value="Cadastra-se">
                 </div>
                 <a href="/">Voltar</a>
-              
+                
             </div>
             
             </form>
     </div>
-        
-</div> 
