@@ -14,6 +14,12 @@ module.exports = class controle {
 
     static login (req , res){
         res.render ('login', {isCreated: req.session.create, message2: req.flash('message2')})
+<<<<<<< HEAD
+=======
+    }
+    static conta (req, res){
+        res.render('conta', { isAuthenticated: req.session.isAuthenticated})
+>>>>>>> 26491e2cb0c1bf402c2b068f1a32a3826efde6a1
     }
 
     static async loginSave(req, res){

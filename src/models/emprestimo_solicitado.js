@@ -22,7 +22,11 @@ const Emprestimo_solicitado = db.define('emprestimo_solicitado', {
         type: DataTypes.INTEGER,
         references: {
             model: Solicitador, 
+<<<<<<< HEAD
             key: 'id_solicitador'
+=======
+            key: 'id_solicitador' 
+>>>>>>> 26491e2cb0c1bf402c2b068f1a32a3826efde6a1
         }
     },
     valor:{
