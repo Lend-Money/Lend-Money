@@ -11,7 +11,7 @@ module.exports = class solicitar {
     
 
      static emprestimo (req,res){
-         solicitadores.findAll ({raw: true, limit:1})
+         solicitadores.findAll ({raw: true})
           .then((data) =>{
              res.render('emprestimo',{solicitadores: data})
            })
