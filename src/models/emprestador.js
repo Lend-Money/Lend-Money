@@ -1,9 +1,15 @@
 const {DataTypes} = require('sequelize')
+
 const db = require('../db/conn.js')
 
-const Usuario = db.define('solicitador',{
-    cpf_solicitador:{
-        type: DataTypes.STRING
+const Emprestador = db.define('emprestador', {
+    cpf_emprestador:{
+        type: DataTypes.STRING(11),
+    },
+    id_emprestador:{
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
     nome:{
         type: DataTypes.STRING
@@ -19,4 +25,4 @@ const Usuario = db.define('solicitador',{
     }
 })
 
-module.exports = Usuario
+module.exports = Emprestador;

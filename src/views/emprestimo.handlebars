@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/style/emprestimo.css">
+
+<div class="container-form">
+    <div class="dados">
+        {{#each solicitadores}}
+            <p>Id usúario: {{this.id_solicitador}}</p>
+        <p>Nome: {{this.nome}}</p>
+        {{/each}}
+    </div>
+    <form action="/addemprestimo" method="post">
+        <h1>solicitar empréstimo</h1>
+        <div class="container-input">
+            <p>Digite o valor do empréstimo</p>
+            <input class="input-number" type="number" name="valor" placeholder="R$ VALOR" required>
+            <p>Digite Id do usúario</p>
+            <input type="text" name="id_solicitador" placeholder="user id" required>   
+            <p>data limite de devolução do empréstimo</p>
+            <input type="date" name="DataMAX_Devolucao"  required>
+            <p>Digite o dia do empréstimo</p>
+            <input type="date" name="DataDaSolicitacao" required>
+            <input id="efetuar" type="submit" value="solicitar">
+             <p id="voltar"><a href="/">Voltar</a></p>
+        </div>
+        
+    </form>
+    
+</div>
