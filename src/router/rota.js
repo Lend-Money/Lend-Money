@@ -4,6 +4,7 @@ const controle =  require ('../controllers/controle')
 const solicitacao = require('../controllers/solicitar')
 const controle2 = require('../controllers/controle2')
 const emprestar = require('../controllers/emprestimos')
+
 const db = require('../db/conn')
 const bcrypt = require('bcrypt')
 
@@ -22,6 +23,9 @@ router.get('/login2', controle2.login2)
 router.post('/loginEmprestador', controle2.loginSave2)
 router.get('/out', controle2.logout)
 router.get('/financiar',emprestar.financiar)
+
+
+
 
 // // router.post('/cadastroSolic', function(req, res){
 // //     const nome = req.body.nome

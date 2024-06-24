@@ -9,6 +9,7 @@ module.exports = class controle2 {
         res.render ('home2', {isAuthenticated: req.session.isAuthenticated})
     }
     
+
     static cadastro2 (req , res){
         res.render ('cadastro2', {message2: req.flash('message2')})
     }
