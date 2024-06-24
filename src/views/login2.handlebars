@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/style/login.css">
 
 <div class="container-form">
-        {{#if message}}
+    {{#if message}}
             <div class="alerts">
                 {{message}}
             </div>
@@ -11,7 +11,7 @@
                 {{message2}}
             </div>
         {{/if}}
-    <form action="/loginSolicitador" method="post">
+    <form action="/loginEmprestador" method="post">
     
         <img src="/image/icons8-usuário-homem-com-círculo.gif" alt="icone de login">
         <h1>Login</h1>
@@ -21,10 +21,10 @@
                 <div class="container-button">
                     <input id="entrar" type="submit" value="Entrar">
                 </div>
-                <a href="/cadastro">Cadastre-se</a>
+                <a href="/cadastro2">Cadastre-se</a>
+
                 <a href="/">Voltar</a>
-            
+                
         </div>
     </form>
-</div>
-     
+</div>  

@@ -1,0 +1,113 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../image/12628435_5026563.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.dados {
+    background-color: #F3FAFE ;
+    width: 350px;
+    height: 65px;
+    margin-bottom: 2.50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 37px -3px rgba(0,0,0,0.1);
+}
+.dados p{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    color: #17A4FF ;
+}
+
+form h1{
+ margin-bottom: 1.50rem;
+ text-align: center;
+ color: #17A4FF;
+ text-transform: uppercase;
+ font-size: 28px;
+ transition: 0.5s ease-in-out;
+}
+form h1:hover{
+    opacity: 60%;
+}
+.container-input{
+    background-color: #F3FAFE;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 37px -3px rgba(0,0,0,0.1);
+    transition: 0.5s ease-in;
+}
+.container-input:hover{
+    opacity: 80%;
+}
+.input-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.container-input p{
+    text-align: center;
+    margin-top: 0.75rem;
+    font-size: 18px;
+    color: #17A4FF;
+}
+.container-input input{
+    width: 320px;
+    height: 30px;
+    margin-top: 0.80rem;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #FFF;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    transition: 0.5s ease;
+    color:#326587;;
+}
+.container-input input:hover{
+    background-color: #F6FBFF ;
+   border: 1px solid #17A4FF;
+}
+
+.container-input input::placeholder{
+    color: #326587;
+    text-transform: uppercase;
+    font-size: 16px;
+
+}
+#efetuar{
+     background-color: #007CCF;
+    color: #FFF;
+    text-transform: uppercase;
+    width: 150px;
+    border: 1px solid #FFF;
+    cursor: pointer;
+    transition: 0.5s ease;
+    margin-top: 0.90rem;
+}
+#efetuar:hover{
+    background-color: #FFF;
+    color: #007CCF;
+    border: 1px solid #007CCF;
+}
+
+#voltar a{
+    color: #007CCF;
+    text-decoration: none;
+    font-size: 18px;
+}

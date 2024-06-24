@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/style/financiar.css">
+
+
+<section>
+     <div class="emprestador">
+    {{#each emprestador}}
+            <p>Id usúario: {{this.id_emprestador}}</p>
+        <p>Nome: {{this.nome}}</p>
+        
+     {{/each}}
+ </div>
+
+ <a href="home2">Voltar</a>
+
+<div class="emprestimos">
+    {{#each Emprestimo_solicitado}}
+        <div class="emprestimo-card">
+            <p class="emprestimo-id">ID do Solicitador: {{this.id_solicitador}}</p>
+            <p class="emprestimo-valor">Valor do Empréstimo: R$ {{this.valor}}</p>
+            <p class="emprestimo-data-solicitacao">Data Solicitada: {{this.DataDaSolicitacao}}</p>
+            <p class="emprestimo-data-devolucao">Data de Devolução: {{this.DataMAX_Devolucao}}</p>
+            <div class="button">
+                <a href="#">Emprestar</a>
+            </div>
+        </div>
+    {{/each}}
+</div>
+</section>

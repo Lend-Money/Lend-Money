@@ -2,55 +2,56 @@ const express = require ('express')
 const db = require('../db/conn')
 const bcrypt = require('bcrypt')
 
-const Solicitador = require('../models/solicitador.js')
-module.exports = class controle {   
-    static home (req , res){
-        res.render ('home', {isAuthenticated: req.session.isAuthenticated})
+const Emprestador = require('../models/emprestador.js')
+module.exports = class controle2 {  
+    
+    static home2 (req , res){
+        res.render ('home2', {isAuthenticated: req.session.isAuthenticated})
+    }
+    
+    static cadastro2 (req , res){
+        res.render ('cadastro2', {message2: req.flash('message2')})
     }
 
-    static cadastro (req , res){
-        res.render ('cadastro', {message2: req.flash('message2')})
+    static login2 (req , res){
+        res.render ('login2', {isCreated: req.session.create, message2: req.flash('message2')})
     }
 
-    static login (req , res){
-        res.render ('login', {isCreated: req.session.create, message2: req.flash('message2')})
-    }
-
-    static async loginSave(req, res){
+    static async loginSave2(req, res){
         const {email, senha} = req.body
 
-        const solicitadores = await Solicitador.findOne({where: {email: email}})
+        const emprestador = await Emprestador.findOne({where: {email: email}})
 
-        if(!solicitadores){
-            res.render('login', {
+        if(!emprestador){
+            res.render('login2', {
             message: 'Usuário não encontrado',
             })
         return
         }
 
-        const senhaMatch = bcrypt.compareSync(senha, solicitadores.senha)
+        const senhaMatch = bcrypt.compareSync(senha, emprestador.senha)
         if(!senhaMatch){
-            res.render('login', {
+            res.render('login2', {
                 message: 'Senha inválida',
             })
             return
         }
         req.session.isAuthenticated = true;
 
-        req.session.userID = solicitadores.id_solicitador;
+        req.session.userID = emprestador.id_emprestador;
         req.flash('message2', 'Login realizado com sucesso!')
 
         req.session.save(()=>{
-            res.redirect('/')            
+            res.redirect('home2')            
         })
     }
-    static async cadastroSave(req, res) {
+    static async cadastroSave2(req, res) {
         try {
-            const { nome, email, senha, cpf_solicitador, celular } = req.body;
+            const { nome, email, senha, cpf_emprestador, celular } = req.body;
     
-            const solicitadorNaoValido = await Solicitador.findOne({ where: { email: email } });
+            const emprestadorNaoValido = await Emprestador.findOne({ where: { email: email } });
     
-            if (solicitadorNaoValido) {
+            if (emprestadorNaoValido) {
                 req.flash('message', 'Este e-mail já está sendo utilizado em outra conta');
                 res.render('cadastro', { message: req.flash('message') })
                 return;
@@ -59,21 +60,21 @@ module.exports = class controle {
             const salt = bcrypt.genSaltSync(10);
             const senhaHashed = bcrypt.hashSync(senha, salt);
     
-            const solicitador = {
+            const emprestador = {
                 nome,
                 email,
                 senha: senhaHashed,
-                cpf_solicitador,
+                cpf_emprestador,
                 celular
             };
     
-            const novoSolicitador = await Solicitador.create(solicitador);
+            const novoEmprestador = await Emprestador.create(emprestador);
     
-            req.session.userID= novoSolicitador.id;
+            req.session.userID= novoEmprestador.id;
             req.session.create = true
                 req.flash('message2', 'Usuario criado com sucesso!\n Faça o login!');
                 req.session.save(() => {
-                res.redirect('login');
+                res.redirect('login2');
             
                 });
             }
