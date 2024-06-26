@@ -4,6 +4,7 @@ const Emprestimo_solicitado = require('../models/emprestimo_solicitado');
 const Emprestador = require('../models/emprestador.js');
 const fim = require('../models/emprestimo.js')
 
+
 module.exports = class emprestimos {
 
     //    static financiar(req, res) {     
@@ -13,7 +14,7 @@ module.exports = class emprestimos {
 
 
 
-    // Middleware de autenticação
+   
     static isAuthenticated(req, res, next) {
         if (req.session.isAuthenticated) {
             next();
@@ -22,13 +23,12 @@ module.exports = class emprestimos {
         }
     }
 
-    // Função para renderizar a página de financiar se o usuário estiver autenticado
     static async financiar(req, res) {
         if (!req.session.isAuthenticated) {
             return res.redirect('/login2');
         }
 
-        const id_emprestador = req.session.userID; // Recupera o id do emprestador da sessão
+        const id_emprestador = req.session.userID; 
 
         try {
             const emprestador = await Emprestador.findOne({ raw: true, where: { id_emprestador } });
@@ -90,7 +90,9 @@ module.exports = class emprestimos {
         .catch((err) => console.log(err));
 
 }
+
 }
+
 
 
 

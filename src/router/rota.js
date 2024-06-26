@@ -6,7 +6,6 @@ const controle2 = require('../controllers/controle2')
 const emprestar = require('../controllers/emprestimos')
 const finalizar = require('../controllers/emprestimos')
 const saldo = require('../controllers/saldo')
-
 const db = require('../db/conn')
 const bcrypt = require('bcrypt')
 
@@ -28,6 +27,7 @@ router.get('/financiar',emprestar.financiar)
 router.get('/concluir',finalizar.concluir)
 router.post('/concluirSave',finalizar.concluirSave)
 router.get('/conta', saldo.conta)
+
 
 
 

@@ -31,11 +31,15 @@ const Emprestimo = db.define('emprestimos', {
             model:Emprestimo_Solicitado,
             key: 'Id_EmprestimoSolicitado'
         }
+
     },
     valor:{
         type: DataTypes.FLOAT,
         allowNull: false
     },
-})
+
+    }
+
+)
 
 module.exports = Emprestimo;

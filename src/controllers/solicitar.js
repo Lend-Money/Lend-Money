@@ -8,7 +8,7 @@ module.exports = class solicitar {
     
     static emprestimo(req, res) {
         res.render('emprestimo', { isAuthenticated: req.session.isAuthenticated });
-    
+
     }
 
     static emprestimo(req, res) {
@@ -25,7 +25,7 @@ module.exports = class solicitar {
                 res.render('emprestimo', { solicitadores: data ? [data] : [] }); // Envia os dados como um array
             })
             .catch((err) => console.log(err));
-            
+
     
     }
 
@@ -46,13 +46,6 @@ module.exports = class solicitar {
 
 }
 }
-
-
-
-
-   
-
-
 
 
 
