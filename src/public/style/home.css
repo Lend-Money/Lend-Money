@@ -279,5 +279,50 @@ header{
   font-size: 17px;
   animation: float 3s ease-in-out infinite;
 }
+footer{
+    background-image: url('../image/12628435_5026563.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.final{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer p{
+    font-size: 35px;
+    font-weight: 600;
+    color: #2985fa;
+    margin-top: 0.80rem;
+}
+.final #texto{
+        font-size: 20px;
+        width: 850px;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text p{
+    font-size: 18px;
+}
+#final{
+    font-size: 16px;
+}
+.icones{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.icones img{
+    width: 40px;
+}
+
 
 

@@ -2,7 +2,6 @@ const express = require ('express')
 const db = require('../db/conn')
 const bcrypt = require('bcrypt')
 const Solicitador = require('../models/solicitador.js')
-const Solicitador = require('../models/solicitador.js')
 
 module.exports = class controle {   
     static home (req , res){
