@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="/style/home.css">
+ 
+<header>
+        <div class="container-logo">
+        <img src="/image/Logo-2.png" alt="logo da empresa">
+        <p id="name">Lend Money</p>
+    </div>
+     <nav class="navbar">
+        <ul>
+            <li>Empréstimo</li>
+            <li>Solicitar</li>
+            <li>Simulação</li>
+             {{#if isAuthenticated}}
+                <li class="login"><a href="/financiar">Financiar</a></li>
+                <li class="login"><a href="/out">LogOut</a></li>
+            {{else}}
+             
+            <li class="cadastro"><a href="/cadastro">Cad.Solicitador</a></li>
+            <li class="cadastro"><a href="/cadastro2">Cad.Emprestador</a></li>
+            <li class="login"><a href="/login">Log.Solicitador</a></li>
+            <li class="login"><a href="/login2">Log.Emprestador</a></li>
+        </ul>
+    
+        </nav>
+    {{/if}}
+</header>
+<div class="container-main">
+    <main>
+        <div class="container-frase">
+            <h1>Empréstimo Pessoal</h1>
+            <p>Facilidade e agilidade para ter dinheiro na mão com a segurança e a confiança que você merece.</p>
+            <p>Empréstimo de pessoa para pessoa P2P.</p>
+            <p>Rápido, fácil e sem burocracia.</p>
+            <p>Empréstimo 100% online.</p>
+            <div id="button-main">
+                <button><a href="/cadastro">Abrir conta Lend Money</a></button>
+            </div>
+        </div>
+        <img id="image-main" src="/image/image-main.jpg" alt="pessoas olhando celular">
+    </main>
+</div>
+    <section class="container-solicitar">
+        <div class="text-solicitar">
+            <h2>Quem pode solicitar</h2>
+            <div class="ul-solicitar">
+                <ul>
+                <div class="li-solicitar">
+                    <img src="/image/icons8-ok-40.png" alt="">
+                    <li>Maiores de 18 anos.</li>
+                </div>
+                <div class="li-solicitar">
+                    <img src="/image/icons8-ok-40.png" alt="">
+                    <li>Aposentados e pensionistas.</li>
+                </div>
+                <div class="li-solicitar">
+                    <img src="/image/icons8-ok-40.png" alt="">
+                    <li>Funcionários públicos federais, estaduais e municipais</li>
+                </div>
+                <div class="li-solicitar">
+                    <img src="/image/icons8-ok-40.png" alt="">
+                    <li>Funcionários registrados em regime CLT</li>
+                </div>
+                <div class="li-solicitar">
+                    <img src="/image/icons8-ok-40.png" alt="">
+                    <li>Autônomos</li>
+                </div>
+                <div class="li-solicitar">
+                    <img src="/image/icons8-ok-40.png" alt="">
+                    <li>Pessoas com bom histórico financeiro</li>
+                </div>     
+            </ul>
+            </div>
+        </div>
+        <img  id="image-casal" src="/image/2148334755.jpg" alt="imagem de casal">
+    </section>
+    <section class="container-simulacao">
+        <div class="text-simulacao">
+            <h2>Empréstimo agora na conta</h2>
+            <p>Precisa fazer um empéstimo de dinheiro em pouco tempo? Você pode simular e solicitar o empréstimo am apenas algus passos.</p>
+            <p>É fácil, rápido, seguro na Lend Money.</p>
+            <a href="/login" id="conta">Acessar Conta</a>
+        </div>
+        <img id="img-simulacao" src="/image/silo-5-554x456.webp" alt="simulação de empréstimo no celular">
+    </section>
+    <section class="container-cartao">
+        <div class="container-texto">
+            <h3>Empéstimo Pessoal no Cartão LM</h3>
+        <p>Dinheiro extra para o seu momento de vida</p>
+        <p>A Lend Money oferece crédito online rápido para milhares de pessoas todo dia. Nascida em 2024, uma fintech jovem e moderna, que opera 100 na internet, para 
+            agilizar ainda mais seus processos aliados  a uma inovadora análise de crédito, que olha além de um score baixo ou nome negativado.</p>
+        <p>A missão da Lend Money é garantir crédito rápido para todos, principalmente aos que mais precisam e já foram recusados diversas vezes. </p>
+        <p>Antes de procurar por um empréstimo no cartão de credito online, procure a Lend Money, verá que é possível conseguir dinheiro na hora com bons prazos e taxas que cabem no seu orçamento.</p>
+        </div>
+        <div class="nome">
+            <img src="/image/cartao.png" alt="">
+            <p id="lm">LendMoney</p>
+        </div>
+    </section>
+    <footer>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
+            <path fill="#0099ff" fill-opacity="1" d="M0,64L60,90.7C120,117,240,171,360,176C480,181,600,139,720,112C840,85,960,75,1080,85.3C1200,96,1320,128,1380,144L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+        </svg>
+    </footer>

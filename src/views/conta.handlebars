@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/style/conta.css">
+
+<div class="banner">
+    <video autoplay muted loop>
+        <source src="/image/210824.mp4" type="video/mp4">
+    </video>
+    <section>
+        <h1>Saldo Disponível</h1>
+        <div class="visualizar">
+            {{#each olho}}
+            <p id="saldo">R$: {{this.valor}}</p>
+            {{/each}}
+        </div>
+
+        <button>Transferir</button>
+        <a href="/">Voltar</a>
+    </section>
+
+</div>

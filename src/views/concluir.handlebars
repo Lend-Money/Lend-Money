@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/style/concluir.css">
+
+
+<div class="banner">
+    <video autoplay muted loop>
+        <source src="/image/210824.mp4" type="video/mp4">
+    </video>
+<div class="container-form">
+    <h1>Concluir emprestimo</h1>
+     <form action="concluirSave" method="post">
+        <div class="container-input">
+            <p>Digite o ID emprestador</p>
+            <input class="number" type="number" name="id_emprestador" placeholder="EMPRESTADOR" required>
+            <p>Digite ID solicitador</p>
+            <input class="number" type="number" name="Id_EmprestimoSolicitados" placeholder="SOLICITADOR" required>   
+            <p>Valor de empréstimo</p>
+            <input class="number" type="number" name="valor" placeholder="R$ ENVIAR" required>   
+            <div class="button">
+                <input  type="submit" value="Enviar">
+            </div>
+            <a href="/home2">Voltar</a>
+        </div>
+        
+    </form>
+    
+</div>

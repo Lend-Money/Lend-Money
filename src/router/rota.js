@@ -1,6 +1,12 @@
 const express = require ('express')
 const router = express.Router()
 const controle =  require ('../controllers/controle')
+const solicitacao = require('../controllers/solicitar')
+const controle2 = require('../controllers/controle2')
+const emprestar = require('../controllers/emprestimos')
+const finalizar = require('../controllers/emprestimos')
+const saldo = require('../controllers/saldo')
+
 const db = require('../db/conn')
 const bcrypt = require('bcrypt')
 
@@ -8,8 +14,24 @@ router.get('/', controle.home)
 router.get('/cadastro', controle.cadastro)
 router.get('/login', controle.login)
 router.post('/loginSolicitador', controle.loginSave)
-router.post('/logout', controle.logout)
+router.get('/out', controle.logout)
 router.post('/cadastroSolic', controle.cadastroSave)
+router.get('/emprestimo',solicitacao.emprestimo)
+router.post('/addemprestimo',solicitacao.emprestimoSave)
+router.get('/home2', controle2.home2)
+router.get('/cadastro2', controle2.cadastro2)
+router.post('/cadastroEmprestador', controle2.cadastroSave2) 
+router.get('/login2', controle2.login2)
+router.post('/loginEmprestador', controle2.loginSave2)
+router.get('/out', controle2.logout)
+router.get('/financiar',emprestar.financiar)
+router.get('/concluir',finalizar.concluir)
+router.post('/concluirSave',finalizar.concluirSave)
+router.get('/conta', saldo.conta)
+
+
+
+
 // // router.post('/cadastroSolic', function(req, res){
 // //     const nome = req.body.nome
 // //     const cpf = req.body.cpf

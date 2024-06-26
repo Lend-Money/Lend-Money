@@ -1,13 +1,17 @@
 const express = require('express');
+const app = express();
 const exphbs = require('express-handlebars');
+const rota = require('./router/rota'); 
+
+
+const Solicitador = require('./models/solicitador');
+const Emprestador = require('./models/emprestador');
+const Emprestimo = require('./models/emprestimo')
+const Emprestimo_Solicitado = require('./models/emprestimo_solicitado');
+
 const session = require("express-session");
 const FileStore = require("session-file-store")(session);
 const flash = require("express-flash");
-const path = require('path');
-const os = require('os');
-const bodyParser = require("body-parser");
-const Usuario = require('./models/usuario'); // Certifique-se que este caminho está correto
-const app = express();
 
 // Configuração do session
 app.use(
@@ -18,7 +22,7 @@ app.use(
     saveUninitialized: false,
     store: new FileStore({
       logFn: function () {},
-      path: path.join(os.tmpdir(), 'sessions'),
+      path: require('path').join(require('os').tmpdir(), 'sessions'),
     }),
     cookie: {
       secure: false,
@@ -28,11 +32,9 @@ app.use(
     },
   })
 );
-
 // Configuração do flash
 app.use(flash());
 
-// Middleware de sessão
 app.use((req, res, next) => {
   console.log(req.session.userID);
 
@@ -42,29 +44,15 @@ app.use((req, res, next) => {
   next();
 });
 
-// Configuração do Handlebars
-app.engine('handlebars', exphbs.engine());
-app.set('view engine', 'handlebars');
-
-// Configuração do body-parser
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// Configuração de arquivos estáticos
-app.use(express.static('public'));
-
-// Importação das rotas e dos controladores
-const controle = require('../src/controllers/controle'); // Certifique-se que este caminho está correto
-const rota = require('./router/rota'); // Certifique-se que este caminho está correto
-
-// Uso das rotas
-app.use(rota);
+const bodyParser = require("body-parser");
 
 async function syncDatabase() {
   try {
-    await Usuario.sync();
+    await Solicitador.sync()
+    await Emprestador.sync()
+    await Emprestimo_Solicitado.sync()
+    await Emprestimo.sync()
     console.log('Modelo sincronizado com o banco de dados');
-    // Inicia o servidor após a sincronização
     app.listen(5000, () => {
       console.log('Servidor iniciado na porta 5000');
     });
@@ -72,5 +60,23 @@ async function syncDatabase() {
     console.error('Erro ao sincronizar modelo com o banco de dados:', error);
   }
 }
+
+
+// Middleware de sessão
+
+// Configuração do Handlebars
+app.engine('handlebars', exphbs.engine());
+app.set('view engine', 'handlebars');
+
+// Configuração de arquivos estáticos
+app.use(express.static('public'));
+
+// Configuração do body-parser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Uso das rotas
+app.use(rota);
+
 
 syncDatabase();

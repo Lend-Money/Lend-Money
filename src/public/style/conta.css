@@ -1,0 +1,94 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.banner video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+}
+section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+section h1{
+    color: #FFF;
+    font-size: 50px;
+    margin-bottom: 1.50rem;
+    opacity: 85%;
+}
+.visualizar{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    justify-content: space-around;
+}
+
+
+section p{
+    color: #FFF;
+    font-size: 30px;
+    font-weight: 500;
+}
+button{
+    width: 250px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1.50rem;
+    color: #FFF;
+    background-color: #2793F5 ;
+    box-shadow: 0px 10px 26px -3px rgba(0,0,0,0.1);
+    opacity: 85%;
+    transition: 0.5s;
+}
+button:hover{
+    background-color: #FFF;
+    color: #2793F5;
+}
+
+section a{
+    color: #FFF;
+    text-decoration: none;
+    margin-top: 1.50rem;
+    font-size: 18px;
+    transition: 0.5s ease;
+    height: 30px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section a:hover{
+    background: #2793F5;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    opacity: 85%;
+}
+
+
+@media (max-width:408px){
+    section h1{
+        font-size: 40px;
+    }
+    section p{
+        font-size: 25px;
+    }
+    button{
+        width: 150px;
+    }
+    
+}
